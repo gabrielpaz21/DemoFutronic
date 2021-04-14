@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="JavaLibs/jna-3.5.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="JavaLibs/platform-3.5.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="JavaLibs/swing-layout-1.0.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="JavaLibs/jgoodies-common-1.8.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="JavaLibs/jgoodies-forms-1.8.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="JavaLibs/jgoodies-common-1.8.0-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="JavaLibs/jgoodies-forms-1.8.0-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="JavaLibs/jersey-bundle-1.19.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="JavaLibs/jackson-databind-2.12.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="JavaLibs/jackson-core-2.12.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="JavaLibs/jackson-annotations-2.12.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="JavaLibs/miglayout15-swing.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
