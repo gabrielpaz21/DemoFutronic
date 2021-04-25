@@ -66,9 +66,9 @@ public class CapturaPulgarDerecho extends Default implements IEnrollmentCallBack
 
 		huella = new JLabel("");
 		huella.setBackground(Color.WHITE);
-		huella.setBounds(127, 105, 199, 303);
+		huella.setBounds(127, 105, 200, 300);
 		fingerPrintImage = new MyIcon(199,303);
-		fingerPrintImage.setImage(createImageIcon("/com/futronic/project/image/huella.png").getImage());
+		fingerPrintImage.setImage(createImageIcon("/com/futronic/project/image/pulgar-derecho.png").getImage());
 		huella.setIcon(createImageIcon("/com/futronic/project/image/huella.png"));
 		huella.setIcon(fingerPrintImage);
 		contentPane.add(huella);

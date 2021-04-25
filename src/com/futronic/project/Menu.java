@@ -55,17 +55,17 @@ public class Menu extends Default {
 		registrar.setBounds(106, 190, 223, 45);
 		contentPane.add(registrar);
 		
-		JButton buscar = new JButton("");
-		buscar.addActionListener(new ActionListener() {
+		JButton verificar = new JButton("");
+		verificar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				changeFrame(new Busqueda());
 			}
 		});
-		buscar.setBorder(null);
-		buscar.setBackground(Color.WHITE);
-		buscar.setIcon(new ImageIcon(Menu.class.getResource("/com/futronic/project/image/busqueda.png")));
-		buscar.setBounds(106, 263, 223, 45);
-		contentPane.add(buscar);
+		verificar.setBorder(null);
+		verificar.setBackground(Color.WHITE);
+		verificar.setIcon(new ImageIcon(Menu.class.getResource("/com/futronic/project/image/verificar.png")));
+		verificar.setBounds(106, 263, 223, 45);
+		contentPane.add(verificar);
 	
 		JLabel logo = new JLabel("");
 		logo.setIcon(new ImageIcon(Menu.class.getResource("/com/futronic/project/image/telcomsis.png")));

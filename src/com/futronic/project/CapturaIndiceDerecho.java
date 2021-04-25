@@ -73,9 +73,9 @@ public class CapturaIndiceDerecho extends Default implements IEnrollmentCallBack
 
 		huella = new JLabel("");
 		huella.setBackground(Color.WHITE);
-		huella.setBounds(127, 105, 199, 303);
+		huella.setBounds(127, 105, 200, 300);
 		m_FingerPrintImage = new MyIcon(199,303);
-		m_FingerPrintImage.setImage(createImageIcon("/com/futronic/project/image/huella.png").getImage());
+		m_FingerPrintImage.setImage(createImageIcon("/com/futronic/project/image/indice-derecho.png").getImage());
 		huella.setIcon(createImageIcon("/com/futronic/project/image/huella.png"));
 		huella.setIcon(m_FingerPrintImage);
 		contentPane.add(huella);
@@ -136,6 +136,8 @@ public class CapturaIndiceDerecho extends Default implements IEnrollmentCallBack
 				WebResource webResource = client.resource("http://localhost:8081/register/save_data");
 				ClientResponse response = webResource.type(MediaType.APPLICATION_JSON_TYPE).post(ClientResponse.class,
 						jsonRegisterRequest);
+				
+				@SuppressWarnings("unused")
 				String jsonRegisterResponse = response.getEntity(String.class);
 
 				int status = response.getStatus();

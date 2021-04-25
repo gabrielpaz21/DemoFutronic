@@ -126,7 +126,7 @@ public class Lista extends JFrame {
 	}
 	
 	private DefaultTableModel createModelTable() {
-		Object [] titulos = {"Nombre","Apellido","Cedula","Pulgar","Indice"};
+		Object [] titulos = {"Nombre","Apellido","Cedula","Pulgar Derecho","Indice Derecho"};
 		
 		DefaultTableModel model = new DefaultTableModel(null,titulos) {
 		

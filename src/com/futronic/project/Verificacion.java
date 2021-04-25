@@ -32,8 +32,8 @@ public class Verificacion extends Default implements IVerificationCallBack {
 	private MyIcon fingerPrintImage;
 	private JLabel huella;
 	private Register register;
-	private JButton capturarHuella;
-	private JButton guardar;
+	private JButton verificarHuella;
+	private JButton mostrarDatos;
 	private FutronicVerification futronicVerification;
 	private JPanel contentPane;
 	private JTextField titulo;
@@ -55,54 +55,60 @@ public class Verificacion extends Default implements IVerificationCallBack {
 		contentPane.setLayout(null);
 
 		titulo = new JTextField();
-		if(tipoDedo.equalsIgnoreCase("Pulgar")) {
-			titulo.setText("Verificaci\u00F3n pulgar derecho");
-		}else {
-			titulo.setText("Verificaci\u00F3n indice derecho");
-		}
 		titulo.setFont(new Font("Lucida Console", Font.BOLD, 18));
 		titulo.setEditable(false);
 		titulo.setColumns(10);
 		titulo.setBorder(null);
 		titulo.setBackground(Color.WHITE);
 		titulo.setBounds(64, 87, 331, 32);
-		contentPane.add(titulo);
+		
 
 		huella = new JLabel("");
 		huella.setBackground(Color.WHITE);
-		huella.setBounds(131, 132, 199, 303);
+		huella.setBounds(131, 132, 200, 300);
 		fingerPrintImage = new MyIcon(199,303);
-		fingerPrintImage.setImage(createImageIcon("/com/futronic/project/image/huella.png").getImage());
+		
 		huella.setIcon(fingerPrintImage);
+		
+		if(tipoDedo.equalsIgnoreCase("Pulgar")) {
+			titulo.setText("Verificaci\u00F3n pulgar derecho");
+			fingerPrintImage.setImage(createImageIcon("/com/futronic/project/image/pulgar-derecho.png").getImage());
+		}else {
+			titulo.setText("Verificaci\u00F3n indice derecho");
+			fingerPrintImage.setImage(createImageIcon("/com/futronic/project/image/indice-derecho.png").getImage());
+		}
+		
+		contentPane.add(titulo);
+		
 		contentPane.add(huella);
 
-		capturarHuella = new JButton("");
-		capturarHuella.addActionListener(new ActionListener() {
+		verificarHuella = new JButton("");
+		verificarHuella.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				btnVerifyActionPerformed(arg0);
 			}
 		});
-		capturarHuella.setIcon(new ImageIcon(
-				Verificacion.class.getResource("/com/futronic/project/image/capturar-huella.png")));
-		capturarHuella.setBorderPainted(false);
-		capturarHuella.setBorder(null);
-		capturarHuella.setBounds(55, 448, 151, 48);
-		contentPane.add(capturarHuella);
+		verificarHuella.setIcon(new ImageIcon(
+				Verificacion.class.getResource("/com/futronic/project/image/verificar-huella.png")));
+		verificarHuella.setBorderPainted(false);
+		verificarHuella.setBorder(null);
+		verificarHuella.setBounds(55, 448, 151, 48);
+		contentPane.add(verificarHuella);
 
-		guardar = new JButton("");
-		guardar.addActionListener(new ActionListener() {
+		mostrarDatos = new JButton("");
+		mostrarDatos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				changeFrame(new Verificante(register,tipoDedo));
 			}
 		});
-		guardar.setIcon(
-				new ImageIcon(Verificacion.class.getResource("/com/futronic/project/image/guardar.png")));
-		guardar.setEnabled(false);
-		guardar.setBorderPainted(false);
-		guardar.setBorder(null);
-		guardar.setBounds(244, 448, 151, 48);
-		guardar.setEnabled(false);
-		contentPane.add(guardar);
+		mostrarDatos.setIcon(
+				new ImageIcon(Verificacion.class.getResource("/com/futronic/project/image/mostrar-datos.png")));
+		mostrarDatos.setEnabled(false);
+		mostrarDatos.setBorderPainted(false);
+		mostrarDatos.setBorder(null);
+		mostrarDatos.setBounds(244, 448, 151, 48);
+		mostrarDatos.setEnabled(false);
+		contentPane.add(mostrarDatos);
 
 		mensaje = new JTextField();
 		mensaje.setForeground(new Color(232, 138, 90));
@@ -208,7 +214,7 @@ public class Verificacion extends Default implements IVerificationCallBack {
 	
 		try {
 			descripcionMensaje.setText("");
-			capturarHuella.setEnabled(false);
+			verificarHuella.setEnabled(false);
 			futronicVerification = new FutronicVerification(template);
 			futronicVerification.Verification( this );
 		} catch (NullPointerException e) {
@@ -225,15 +231,15 @@ public class Verificacion extends Default implements IVerificationCallBack {
 		if (bSuccess) {
 			if (bVerificationSuccess) {
 				mensaje.setText("La verificación fue exitosa.");
-				guardar.setEnabled(true);
+				mostrarDatos.setEnabled(true);
 			} else {
 				mensaje.setText("La verificación fue fallida.");
-				capturarHuella.setEnabled(true);
+				verificarHuella.setEnabled(true);
 			}
 		} else {
 			mensaje.setText("La verificación fue fallida.");
 			descripcionMensaje.setText(FutronicSdkBase.SdkRetCode2Message(nResult));
-			capturarHuella.setEnabled(true);
+			verificarHuella.setEnabled(true);
 		}
 		
 		futronicVerification = null;

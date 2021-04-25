@@ -88,8 +88,8 @@ public class Busqueda extends Default {
 		textDNI.setBounds(61, 250, 49, 32);
 		contentPane.add(textDNI);
 		
-		JButton capturarHuella = new JButton("");
-		capturarHuella.addActionListener(new ActionListener() {
+		JButton verificarHuella = new JButton("");
+		verificarHuella.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				boolean DNIEstaVacio = inputDNI.getText().isEmpty();
@@ -133,13 +133,13 @@ public class Busqueda extends Default {
 	
 			}
 		});
-		capturarHuella.setIcon(new ImageIcon(Busqueda.class.getResource("/com/futronic/project/image/capturar-huella.png")));
-		capturarHuella.setFont(new Font("Lucida Console", Font.BOLD, 15));
-		capturarHuella.setBorderPainted(false);
-		capturarHuella.setBorder(null);
-		capturarHuella.setBackground(Color.WHITE);
-		capturarHuella.setBounds(150, 365, 152, 49);
-		contentPane.add(capturarHuella);		
+		verificarHuella.setIcon(new ImageIcon(Busqueda.class.getResource("/com/futronic/project/image/verificar-huella.png")));
+		verificarHuella.setFont(new Font("Lucida Console", Font.BOLD, 15));
+		verificarHuella.setBorderPainted(false);
+		verificarHuella.setBorder(null);
+		verificarHuella.setBackground(Color.WHITE);
+		verificarHuella.setBounds(150, 365, 152, 49);
+		contentPane.add(verificarHuella);		
 		
 		message = new JLabel("");
 		message.setHorizontalAlignment(SwingConstants.CENTER);
